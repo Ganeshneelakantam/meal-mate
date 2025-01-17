@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'delivery/img/mm_delivery.ico' %}">
+    <link rel="stylesheet" href="{% static 'delivery/css/home-style.css' %}">
+    <title>Meal Mate - Dashboard</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="{% static 'delivery/img/mealMate.png' %}" alt="Meal Mate" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#orders">Orders</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="{% url 'logout' %}" class="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-content">
+            <h1 class="greet-msg">Welcome, {{ username }}!</h1>
+            <p>Your one-stop solution for delicious meals and hassle-free delivery.</p>
+            <a href="#orders" class="btn primary-btn">View Orders</a>
+            <a href="#home" class="btn secondary-btn">Explore Restaurants</a>
+        </div>
+        <div class="welcome-image">
+            <div class="slideshow" id="slideshow">
+                {% comment %} <img src="https://img.freepik.com/premium-photo/food-with-delivery-set-dishes-diet-top-view-free-space-your-text-black-background_187166-17622.jpg" alt="Welcome Image"> {% endcomment %}
+                {% comment %} <img src="https://img.freepik.com/premium-photo/food-with-delivery-set-dishes-diet-top-view-free-space-your-text-black-background_187166-3087.jpg" alt="Food Image 1"> {% endcomment %}
+                {% comment %} <img src="https://img.freepik.com/premium-photo/collection-take-away-foil-boxes-with-healthy-food-set-containers-with-daily-meals-top-view-free-copy-space_187166-40305.jpg" alt="Food Image 2"> {% endcomment %}
+                <img src="https://img.freepik.com/premium-photo/food-with-delivery-set-dishes-diet-top-view-free-space-your-text-black-background_187166-31861.jpg" alt="Food Image 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants Section -->
+    <section id="home" class="featured-section">
+        <h2>Featured Restaurants</h2>
+        <div class="restaurant-list">
+            <div class="restaurant-card">
+                <img src="https://img.freepik.com/premium-photo/beautiful-restaurant-food-black-background-generative-ai_73944-32275.jpg" alt="Restaurant 1">
+                <h3>Restaurant Name 1</h3>
+                <p>Delicious cuisines delivered to your doorstep.</p>
+                <a href="#" class="btn view-btn">View Menu</a>
+            </div>
+            <div class="restaurant-card">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/1a/ee/95/9d/marmaris-grills-and-signatures.jpg" alt="Restaurant 2">
+                <h3>Restaurant Name 2</h3>
+                <p>Fresh and tasty meals, just a click away.</p>
+                <a href="#" class="btn view-btn">View Menu</a>
+            </div>
+            <div class="restaurant-card">
+                <img src="https://i0.wp.com/blog.petpooja.com/wp-content/uploads/2021/10/cultural-cuisine.jpg?resize=696%2C385&ssl=1" alt="Restaurant 3">
+                <h3>Restaurant Name 3</h3>
+                <p>Explore unique flavors and dishes.</p>
+                <a href="#" class="btn view-btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Orders Section -->
+    <section id="orders" class="orders-section">
+        <h2>Your Recent Orders</h2>
+        <ul class="order-list">
+            <li>
+                <span>Pizza from Restaurant 1</span>
+                <span class="status delivered">Delivered</span>
+            </li>
+            <li>
+                <span>Burger from Restaurant 2</span>
+                <span class="status in-progress">In Progress</span>
+            </li>
+            <li>
+                <span>Sushi from Restaurant 3</span>
+                <span class="status delivered">Delivered</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Meal Mate. All Rights Reserved. | Designed for deliciousness!</p>
+    </footer>
+</body>
+</html>
